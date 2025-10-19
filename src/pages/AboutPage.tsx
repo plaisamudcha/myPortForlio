@@ -1,6 +1,8 @@
 import SkillCard from "@/components/SkillCard";
 import myImage from "../assets/myImage.png";
 import FunFactCard from "@/components/FunFactCard";
+import { MYFUNFACT } from "@/lib/myFunFact";
+import { MYSKILLCARD } from "@/lib/myskillCard";
 
 function AboutPage() {
   return (
@@ -39,23 +41,9 @@ function AboutPage() {
           <span className="text-primary">#</span>skills
         </h1>
         <div className="flex justify-between gap-4">
-          <SkillCard
-            name="Languages"
-            details="JavaScript, TypeScript, Python, C, Golang"
-          />
-          <SkillCard
-            name="Others"
-            details="HTML, CSS, Bootstrap, Tailwind CSS"
-          />
-          <SkillCard
-            name="Tools"
-            details="VsCode, GitHub, Docker, GitLab, Linux"
-          />
-          <SkillCard
-            name="Frameworks"
-            details="React, Node.js, Express, NestJS, NextJs"
-          />
-          <SkillCard name="Databases" details="MongoDB, PostgreSQL, mySQL" />
+          {MYSKILLCARD.map((skill, index) => (
+            <SkillCard key={index} name={skill.NAME} />
+          ))}
         </div>
       </div>
       <div className="flex flex-col mb-10">
@@ -63,13 +51,9 @@ function AboutPage() {
           <span className="text-primary">#</span>my-fun-facts
         </h1>
         <div className="flex w-2/3 flex-wrap gap-4">
-          <FunFactCard detail="I love to play video games, especially RPG games." />
-          <FunFactCard detail="I'm a fan of sci-fi movies." />
-          <FunFactCard detail="I enjoy board games with friends and family." />
-          <FunFactCard detail="My favorite game is sudoku." />
-          <FunFactCard detail="I have a pet cat." />
-          <FunFactCard detail="I enjoy coding challenges." />
-          <FunFactCard detail="I have 1 brother." />
+          {MYFUNFACT.map((fact) => (
+            <FunFactCard key={fact.NUMBER} detail={fact.FACT} />
+          ))}
         </div>
       </div>
     </div>
