@@ -7,6 +7,7 @@ import DotsButton from "@/components/DotsButton";
 import { MYPROJECTGITHUB, MYSMALLPROJECTGITHUB } from "@/lib/myProjectGitHub";
 import portForlioProject from "@/assets/portForlioProject.png";
 import aboutImage from "../assets/myImage.png";
+import { NavLink } from "react-router";
 
 function HomePage() {
   return (
@@ -128,12 +129,12 @@ function HomePage() {
           <h2 className="text-white text-xl sm:text-2xl text-center sm:text-left">
             <span className="text-primary">#</span>projects
           </h2>
-          <a
-            href="/works"
+          <NavLink
+            to="/works"
             className="text-white hover:text-primary transition-colors duration-300 hover:underline text-center sm:text-right"
           >
             View all ~~&gt;
-          </a>
+          </NavLink>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
@@ -246,9 +247,12 @@ function HomePage() {
               the newest technologies and frameworks.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <button className="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-background transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
+              <NavLink
+                to="/contact"
+                className="px-4 py-2 border border-primary text-primary hover:bg-primary cursor-pointer hover:text-background transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              >
                 Read more -&gt;
-              </button>
+              </NavLink>
             </div>
           </div>
 
