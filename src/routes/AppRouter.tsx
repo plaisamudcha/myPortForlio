@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import Loading from "../components/Loading";
 
 const HomeLayout = lazy(() => import("../Layouts/HomeLayout"));
 const HomePage = lazy(() => import("../pages/HomePage"));
@@ -9,7 +10,7 @@ const ContactPage = lazy(() => import("../pages/ContactPage"));
 
 function AppRouter() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <RouterProvider
         router={createBrowserRouter([
           {
